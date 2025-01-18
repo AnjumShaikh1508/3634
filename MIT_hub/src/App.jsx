@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './Components/Navbar'
-import AppRoutes from './Routes/AppRoutes'
-import Footer from './Components/Footer'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import AppRoutes from './Routes/AppRoutes';
+import { FirebaseProvider } from './Context/FirebaseContext';
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <Navbar />
-      <AppRoutes />
-      <Footer />
-    </>
-  )
-}
+    <FirebaseProvider>
+      <div>
+        <Navbar />
+        <AppRoutes />
+        <Footer />
+      </div>
+    </FirebaseProvider>
+  );
+};
 
-export default App
+export default App;
