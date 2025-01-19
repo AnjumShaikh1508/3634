@@ -8,6 +8,7 @@ import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 import Cart from '../Pages/Cart';
 import Wishlist from '../Pages/Wishlist';
+import OrderConfirmation from '../Pages/OrderConfirmation';
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
       </Routes>
     </div>
   );

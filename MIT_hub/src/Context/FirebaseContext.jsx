@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { getFirestore, doc, setDoc, updateDoc, getDoc } from "firebase/firestore";
 import axios from 'axios';
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyB_qEDfsH-UB3bqvDP8j8JJDG5qnISujS8",
   authDomain: "mit-marketplace-6e367.firebaseapp.com",
@@ -139,6 +140,19 @@ export const FirebaseProvider = ({ children }) => {
     }
   };
 
+  const clearCart = async () => {
+    try {
+      const userRef = doc(db, 'users', user.uid);
+      await updateDoc(userRef, {
+        cart: []
+      });
+      setCart([]);
+    } catch (error) {
+      console.error('Error clearing cart:', error);
+      throw error;
+    }
+  };
+
   const value = {
     user,
     loading,
@@ -150,7 +164,8 @@ export const FirebaseProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     addToWishlist,
-    removeFromWishlist
+    removeFromWishlist,
+    clearCart
   };
 
   return (
