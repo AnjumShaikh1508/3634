@@ -164,4 +164,4 @@ Masai School for inspiring this project.
 
 
 Deployed Link of project
-https://sweet-beijinho-848962.netlify.app/
+https://mit-marketplace.netlify.app/
