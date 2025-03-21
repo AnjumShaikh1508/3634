@@ -164,4 +164,4 @@ Masai School for inspiring this project.
 
 
 Deployed Link of project
-https://mit-marketplace.netlify.app/
+https://flourishing-chimera-700106.netlify.app/
